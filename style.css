@@ -1,3 +1,4 @@
+@@ -0,0 +1,380 @@
 body {
   font-family: "Gotham SSm A","Gotham SSm B",Arial,sans-serif;
   /*padding: 80px;*/
@@ -28,6 +29,7 @@ h1 {
 	line-height: 26.4px;
   color: #ffff66;
   font-weight: bold;
+  padding-bottom: 10px;
 }
 h2 {
 	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
@@ -87,10 +89,12 @@ width: 50%;
   padding: 20px;
   border: 1px solid grey;
   margin: 10px 10px 10px 0px;
+  border-radius: 5px;
 }
 
 .news img {
   width: 100%;
+  height: 300px;
 }
 
 .news:hover {
@@ -134,7 +138,7 @@ button{
   position:relative;
   height:60px;
   font-size:1.6em;
-  padding:0 2em;
+  padding:0 1em;
   cursor:pointer;
   transition:800ms ease all;
   outline:none;
@@ -145,7 +149,7 @@ button:hover{
 }
 button:before,button:after{
   content:'';
-  position:absolute;
+  position:relative;
   top:0;
   right:0;
   height:2px;
@@ -179,9 +183,9 @@ html,body{
   justify-content: center;
   align-items: flex-start;
   align-content: flex-start;
-  height:50vw;
-  min-height:400px;
-  max-height:550px;
+  height:40vw;
+  min-height:200px;
+  max-height:350px;
   min-width:300px;
   color:#eee;
 }
@@ -256,9 +260,9 @@ html,body{
 }
 .info{
   width:100%;
-  padding:15% 10% 0 10%;
   text-align:center;
   text-shadow:0 2px 3px rgba(0,0,0,0.2)
+  margin-bottom:20px;
 }
 .author{
   display:inline-block;

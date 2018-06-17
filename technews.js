@@ -2,10 +2,13 @@ const key = '098b6c2e88014ed2a7bfd6b9d81e304a'
 const url =  `https://newsapi.org/v2/everything?q=gadget OR startup OR psychology OR personal app&sources=wired,buzzfeed,techcrunch&language=en&sortBy=publishedAt&apiKey=${key}`
 const url2 = `https://newsapi.org/v2/everything?sources=buzzfeed&q=gadget&apiKey=${key}`
 const travelurl = `https://newsapi.org/v2/everything?q="abandoned places"&apiKey=${key}`
+const scienceurl = `https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=${key}`
 const articlesDiv = document.querySelector(".articles")
 const largeArticlesDiv = document.querySelector(".largeArticle")
 const techLinkDiv = document.querySelector(".tech");
 const travelLinkDiv = document.querySelector(".travel");
+const scienceLinkDiv = document.querySelector(".science");
+const pageTitle = document.querySelector(".heading");
 
 const recievedNews = (newsdata) => {
     articlesDiv.innerHTML = null;
@@ -28,7 +31,7 @@ const recievedNews = (newsdata) => {
       }*/
 
 
-if (index < 9 && index > 0) {
+if (index < 9 && index > 0 && (article.urlToImage !== null)) {
 			//Here we create and add html elements to our html file
       const div = document.createElement("div")
       div.className = "news"
@@ -54,11 +57,18 @@ fetch(travelurl)
   .then(recievedNews)
 }
 
+const fetchScienceNews = () => {
+fetch(scienceurl)
+  .then(response => response.json())
+  .then(recievedNews)
+}
+
 
 techLinkDiv.onclick = fetchTechNews;
 travelLinkDiv.onclick = fetchTravelNews;
+scienceLinkDiv.onclick = fetchScienceNews;
 
-fetchTravelNews()
+fetchTechNews()
 
 /*
 const gadgetNews = (newsdata) => {
